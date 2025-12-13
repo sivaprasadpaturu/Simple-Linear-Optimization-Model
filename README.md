@@ -8,18 +8,13 @@ The framework is intentionally designed to be problem-agnostic, allowing it to r
 # Model Structure:
 The optimization model follows the standard linear programming formulation:
 # Decision Variables:
-xᵢ : level of decision i (xᵢ ≥ 0)\n
 Represent controllable decisions (e.g., production quantities, allocation levels, assignments).
 Variables are continuous and non-negative by default but can be extended to integer or binary variables if required.
 # Objective Function:
-Minimize / Maximize \n
-Σ cᵢ xᵢ \n
 A linear objective to either:
 Maximize profit, efficiency, or utilization
 Minimize cost, waste, or deviation
 # Constraints:
-Σ aᵢⱼ xᵢ ≤ bⱼ for all constraints j \n 
-xᵢ ≥ 0 for all decision variables i \n
 Linear constraints representing real-world limitations such as:
 Capacity limits
 Demand requirements
