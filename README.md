@@ -1,37 +1,44 @@
-# Simple-Linear-Optimization-Model
-Minimum-Cost Production Planning
-# Problem:
+# Linear Optimization Model – PuLP
+Minimum-Cost or Maximum-Profit  Planning
+# Overview:
+This repository presents a generic linear optimization modeling framework implemented in Python using PuLP.
+The objective of the project is to demonstrate how real-world decision-making problems can be formulated and solved as Linear Programming (LP) models in a structured, reusable, and extensible manner.
 
-A company must produce a product using two factories: Factory A and Factory B.
-Each factory has a different production cost and a limited capacity.
-The company wants to meet customer demand at the minimum total cost.
+The framework is intentionally designed to be problem-agnostic, allowing it to represent a variety of linear optimization problems such as resource allocation, production planning, transportation, assignment, and cost minimization/maximization scenarios by changing only the input data.
+# Model Structure:
+The optimization model follows the standard linear programming formulation:
+# Decision Variables
+Represent controllable decisions (e.g., production quantities, allocation levels, assignments).
+Variables are continuous and non-negative by default but can be extended to integer or binary variables if required.
+# Objective Function
+A linear objective to either:
+Maximize profit, efficiency, or utilization
+Minimize cost, waste, or deviation
+# Constraints
+Linear constraints representing real-world limitations such as:
+Capacity limits
+Demand requirements
+Budget restrictions
+Resource availability
+# Mathematical Formulation
+The general form of the model is:
 
-# Assume:
-
-Factory A cost = 20 € per unit, capacity = 50 units
-Factory B cost = 25 € per unit, capacity = 40 units
-Customer demand = 60 units in total
-
-# Goal: Decide how many units to produce in each factory to minimize cost while:
-
-Meeting demand.
-Not exceeding each factory’s capacity.
-
-# Mathematical model
-
-# Decision variables
-
-F_A = units produced in Factory A
-F_B = units produced in Factory B
-Both must be >= 0
-
-# Objective:
-
-min 20*F_A + 25*F_B
-
-# Constraints:
-
-Meet demand: F_A + F_B >= 60
-capacity of Factory A: F_A <= 50
-capacity of Factory B: F_B <= 40
-Non-negativity: F_A >= 0, F_B >= 0
+Optimize: 
+$$
+\text{Optimize } \sum_{i=1}^{n} c_i x_i
+$$
+# Implementation
+The model is implemented using the PuLP library and follows a consistent workflow:
+Define the optimization problem
+Declare decision variables
+Add the objective function
+Add constraints
+Solve and analyze results
+# Applications
+This framework can be applied to:
+Resource allocation and planning
+Production and cost optimization
+Transportation and assignment problems
+Academic and beginner-level OR projects
+# Purpose
+The goal of this project is to bridge linear programming theory with practical implementation in Python and to serve as a reusable learning and portfolio resource for optimization and OR roles.
