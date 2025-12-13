@@ -25,8 +25,13 @@ The general form of the model is:
 
 Optimize: 
 $$
-\text{Optimize } \sum_{i=1}^{n} c_i x_i
+\begin{aligned}
+\text{Optimize: } & \sum_{i=1}^{n} c_i x_i \\
+\text{Subject to: } & \sum_{i=1}^{n} a_{ij} x_i \le b_j, \quad j = 1,\dots,m \\
+& x_i \ge 0, \quad i = 1,\dots,n
+\end{aligned}
 $$
+
 # Implementation
 The model is implemented using the PuLP library and follows a consistent workflow:
 Define the optimization problem
